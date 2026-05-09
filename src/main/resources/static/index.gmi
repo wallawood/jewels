@@ -1,0 +1,11 @@
+# 💎 Jewels
+
+A place for shower thoughts.
+
+=> /about About Jewels
+=> /contact Contact
+=> /signup Sign up
+=> /jewels Browse jewels
+=> /jewels/search Search jewels
+=> /jewels/best Best jewels
+=> /leave Leave Jewels

@@ -1,0 +1,15 @@
+# Enable Your Certificate
+
+To sign up or post jewels, your Gemini client needs to send a client certificate.
+
+## How to enable it
+Most Gemini clients will prompt you to create or select a certificate when a site requests one. If yours doesn't:
+
+* Lagrange: Settings → Identity → Create a new identity
+* Amfora: It will prompt automatically
+* Kristall: Certificate manager in the toolbar
+
+Once your certificate is active, try signing up again.
+
+=> /signup Sign up
+=> / ← Home

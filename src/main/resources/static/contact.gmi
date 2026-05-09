@@ -1,0 +1,7 @@
+# Contact
+
+Questions? Complaints? Shower thoughts about shower thoughts?
+
+Send a capsule to gemini://localhost:1965.
+
+=> / ← Home

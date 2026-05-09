@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.example'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.gemboot:gemboot:0.1.0-SNAPSHOT'
+    implementation 'ch.qos.logback:logback-classic:1.5.3'
+    implementation 'org.xerial:sqlite-jdbc:3.45.3.0'
+    implementation 'com.github.jknack:handlebars:4.4.0'
+}
+
+application {
+    mainClass = 'com.example.jewels.App'
+}
