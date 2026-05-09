@@ -1,9 +1,9 @@
-package com.example.jewels.views;
+﻿package com.example.jewels.views;
 
 import com.example.jewels.repository.dto.Jewel;
 import com.example.jewels.repository.dto.User;
 import com.github.jknack.handlebars.Handlebars;
-import io.gemboot.annotations.Component;
+import io.github.wallawood.annotations.Component;
 
 import java.io.IOException;
 import java.util.List;

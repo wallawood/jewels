@@ -1,7 +1,7 @@
-package com.example.jewels.errors;
+﻿package com.example.jewels.errors;
 
-import io.gemboot.GeminiResponse;
-import io.gemboot.annotations.GeminiExceptionHandler;
+import io.github.wallawood.GeminiResponse;
+import io.github.wallawood.annotations.GeminiExceptionHandler;
 
 @GeminiExceptionHandler
 public class ErrorHandler {

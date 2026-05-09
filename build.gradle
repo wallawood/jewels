@@ -17,7 +17,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.gemboot:gemboot:0.1.0-SNAPSHOT'
+    implementation 'io.github.wallawood:wallawood:0.8.0'
     implementation 'ch.qos.logback:logback-classic:1.5.3'
     implementation 'org.xerial:sqlite-jdbc:3.45.3.0'
     implementation 'com.github.jknack:handlebars:4.4.0'

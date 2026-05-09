@@ -1,7 +1,7 @@
-package com.example.jewels.repository;
+﻿package com.example.jewels.repository;
 
 import com.example.jewels.repository.dto.User;
-import io.gemboot.annotations.Component;
+import io.github.wallawood.annotations.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

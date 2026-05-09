@@ -1,11 +1,11 @@
-package com.example.jewels.auth;
+﻿package com.example.jewels.auth;
 
-import io.gemboot.Authorization;
-import io.gemboot.GeminiResponse;
-import io.gemboot.Grant;
-import io.gemboot.RequestContext;
-import io.gemboot.RequestInterceptor;
-import io.gemboot.annotations.Preprocessor;
+import io.github.wallawood.Authorization;
+import io.github.wallawood.GeminiResponse;
+import io.github.wallawood.Grant;
+import io.github.wallawood.RequestContext;
+import io.github.wallawood.RequestInterceptor;
+import io.github.wallawood.annotations.Preprocessor;
 
 import java.net.URI;
 import java.util.Optional;

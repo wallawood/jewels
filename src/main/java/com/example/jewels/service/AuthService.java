@@ -1,9 +1,9 @@
-package com.example.jewels.service;
+﻿package com.example.jewels.service;
 
 import com.example.jewels.repository.UserRepository;
 import com.example.jewels.repository.dto.User;
-import io.gemboot.CertUtil;
-import io.gemboot.annotations.Component;
+import io.github.wallawood.CertUtil;
+import io.github.wallawood.annotations.Component;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

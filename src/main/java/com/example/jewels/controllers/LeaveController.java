@@ -1,16 +1,16 @@
-package com.example.jewels.controllers;
+﻿package com.example.jewels.controllers;
 
 import com.example.jewels.views.Views;
 import com.example.jewels.repository.JewelRepository;
 import com.example.jewels.repository.dto.User;
 import com.example.jewels.repository.UserRepository;
-import io.gemboot.GeminiResponse;
-import io.gemboot.annotations.RequireAuthorized;
-import io.gemboot.annotations.Context;
-import io.gemboot.annotations.GeminiController;
-import io.gemboot.annotations.Path;
-import io.gemboot.annotations.QueryString;
-import io.gemboot.annotations.RequireSensitiveInput;
+import io.github.wallawood.GeminiResponse;
+import io.github.wallawood.annotations.RequireAuthorized;
+import io.github.wallawood.annotations.Context;
+import io.github.wallawood.annotations.GeminiController;
+import io.github.wallawood.annotations.Path;
+import io.github.wallawood.annotations.QueryString;
+import io.github.wallawood.annotations.RequireSensitiveInput;
 
 import java.io.IOException;
 

@@ -1,16 +1,16 @@
-package com.example.jewels.controllers;
+﻿package com.example.jewels.controllers;
 
 import com.example.jewels.service.AuthService;
 import com.example.jewels.auth.Role;
 import com.example.jewels.views.Views;
-import io.gemboot.CertUtil;
-import io.gemboot.GeminiResponse;
-import io.gemboot.annotations.Context;
-import io.gemboot.annotations.GeminiController;
-import io.gemboot.annotations.Path;
-import io.gemboot.annotations.QueryString;
-import io.gemboot.annotations.RequireCertificate;
-import io.gemboot.annotations.RequireInput;
+import io.github.wallawood.CertUtil;
+import io.github.wallawood.GeminiResponse;
+import io.github.wallawood.annotations.Context;
+import io.github.wallawood.annotations.GeminiController;
+import io.github.wallawood.annotations.Path;
+import io.github.wallawood.annotations.QueryString;
+import io.github.wallawood.annotations.RequireCertificate;
+import io.github.wallawood.annotations.RequireInput;
 
 import java.io.IOException;
 import java.security.cert.X509Certificate;
