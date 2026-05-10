@@ -1,4 +1,4 @@
-﻿package com.example.jewels.controllers;
+package com.example.jewels.controllers;
 
 import com.example.jewels.views.Views;
 import com.example.jewels.repository.dto.Jewel;

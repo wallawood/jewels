@@ -1,4 +1,4 @@
-﻿package com.example.jewels.auth;
+package com.example.jewels.auth;
 
 import com.example.jewels.repository.dto.User;
 import com.example.jewels.service.AuthService;

@@ -1,4 +1,4 @@
-﻿package com.example.jewels.auth;
+package com.example.jewels.auth;
 
 import io.github.wallawood.Authorization;
 import io.github.wallawood.GeminiResponse;

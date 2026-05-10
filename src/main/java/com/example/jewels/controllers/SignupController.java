@@ -1,4 +1,4 @@
-﻿package com.example.jewels.controllers;
+package com.example.jewels.controllers;
 
 import com.example.jewels.service.AuthService;
 import com.example.jewels.auth.Role;

@@ -1,4 +1,4 @@
-﻿package com.example.jewels;
+package com.example.jewels;
 
 import com.example.jewels.repository.Database;
 import io.github.wallawood.WallawoodServer;

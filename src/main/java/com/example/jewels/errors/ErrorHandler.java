@@ -1,4 +1,4 @@
-﻿package com.example.jewels.errors;
+package com.example.jewels.errors;
 
 import io.github.wallawood.GeminiResponse;
 import io.github.wallawood.annotations.GeminiExceptionHandler;

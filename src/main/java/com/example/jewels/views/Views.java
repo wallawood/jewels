@@ -1,4 +1,4 @@
-﻿package com.example.jewels.views;
+package com.example.jewels.views;
 
 import com.example.jewels.repository.dto.Jewel;
 import com.example.jewels.repository.dto.User;

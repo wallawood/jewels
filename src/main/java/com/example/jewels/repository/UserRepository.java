@@ -1,4 +1,4 @@
-﻿package com.example.jewels.repository;
+package com.example.jewels.repository;
 
 import com.example.jewels.repository.dto.User;
 import io.github.wallawood.annotations.Component;
