@@ -6,7 +6,8 @@ import com.example.jewels.repository.JewelRepository;
 import com.example.jewels.repository.dto.User;
 import com.example.jewels.errors.NotFoundException;
 import io.github.wallawood.GeminiResponse;
-import io.github.wallawood.annotations.RequireAuthorized;
+import io.github.wallawood.annotations.RequireClearance;
+import com.example.jewels.auth.Role;
 import io.github.wallawood.annotations.Context;
 import io.github.wallawood.annotations.GeminiController;
 import io.github.wallawood.annotations.Path;
@@ -18,7 +19,7 @@ import java.io.IOException;
 
 @GeminiController
 @Path("/jewels")
-@RequireAuthorized(message = "Sign up to browse jewels.")
+@RequireClearance(level = Role.USER, message = "Sign up to browse jewels.")
 public class JewelController {
 
     private final JewelRepository jewels;
