@@ -31,7 +31,7 @@ public class SignupController {
     @Path("")
     public GeminiResponse choose(@Context X509Certificate cert) throws IOException {
         if (authService.isRegistered(cert)) {
-            return GeminiResponse.success(views.signupExists(CertUtil.cn(cert)));
+            return GeminiResponse.success(views.signupExists(CertUtil.name(cert)));
         }
         return GeminiResponse.success(views.signupChoose());
     }

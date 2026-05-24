@@ -40,7 +40,7 @@ public class AuthService {
     }
 
     static String identityHash(X509Certificate cert) {
-        return sha256(CertUtil.cn(cert) + ":" + CertUtil.fingerprint(cert));
+        return sha256(CertUtil.name(cert) + ":" + CertUtil.fingerprint(cert));
     }
 
     private static String sha256(String input) {
