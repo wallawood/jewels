@@ -4,8 +4,9 @@ import com.example.jewels.views.Views;
 import com.example.jewels.repository.JewelRepository;
 import com.example.jewels.repository.dto.User;
 import com.example.jewels.repository.UserRepository;
+import com.example.jewels.auth.Role;
 import io.github.wallawood.GeminiResponse;
-import io.github.wallawood.annotations.RequireAuthorized;
+import io.github.wallawood.annotations.RequireClearance;
 import io.github.wallawood.annotations.Context;
 import io.github.wallawood.annotations.GeminiController;
 import io.github.wallawood.annotations.Path;
@@ -28,7 +29,7 @@ public class LeaveController {
     }
 
     @Path("/leave")
-    @RequireAuthorized(message = "You need to be signed in to leave.")
+    @RequireClearance(level = Role.USER, message = "You need to be signed in to leave.")
     @RequireSensitiveInput("Type DELETE to confirm:")
     public GeminiResponse leave(@Context User user, @QueryString String confirmation) throws IOException {
         if (!"DELETE".equals(confirmation.trim())) {
