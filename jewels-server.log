@@ -1,0 +1,67 @@
+> Task :compileJava
+> Task :processResources UP-TO-DATE
+> Task :classes
+
+> Task :run
+19:57:34.671 [main] INFO  io.github.wallawood.access - Loading properties from application.properties...
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.hostname=localhost
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.bind-address=0.0.0.0
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.port=1965
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.cert.path=auto
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.key.path=auto
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.worker.max-concurrency=80
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.worker.timeout=30s
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.http.enable=true
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.http.bind-address=0.0.0.0
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.http.port=8443
+19:57:34.675 [main] INFO  io.github.wallawood.access - wallawood.http.clientCertMode=DELEGATE
+19:57:34.675 [main] INFO  io.github.wallawood.access - Scanning 'com.example.jewels' for annotated classes...
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /account -> AccountController.index
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /account/set-password -> AccountController.setPassword
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /login -> HttpLoginController.login
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /logout -> HttpLoginController.logout
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /http-signup -> HttpSignupController.signup
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /jewels -> JewelController.list
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /jewels/{id}/delete -> JewelController.delete
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /jewels/new -> JewelController.create
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /jewels/search -> JewelController.search
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /jewels/{id} -> JewelController.view
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /jewels/{id}/edit -> JewelController.edit
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /jewels/best -> JewelController.best
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /leave -> LeaveController.leave
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /signup/user -> SignupController.signupUser
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /signup -> SignupController.choose
+19:57:34.846 [main] INFO  io.github.wallawood.access - Route /signup/mod -> SignupController.signupMod
+19:57:34.846 [main] INFO  io.github.wallawood.access - Interceptor SessionAuthority priority=-1
+19:57:34.846 [main] INFO  io.github.wallawood.access - Interceptor Authority priority=0
+19:57:34.846 [main] INFO  io.github.wallawood.access - Interceptor StaticGuard priority=10
+19:57:34.846 [main] INFO  io.github.wallawood.access - Interceptor HttpAuthGuard priority=20
+19:57:34.846 [main] INFO  io.github.wallawood.access - ExceptionHandler ErrorHandler
+19:57:35.492 [main] INFO  io.github.wallawood.access - Static classpath:/static (built-in)
+19:57:35.492 [main] INFO  io.github.wallawood.access - *** -  Wallawood  >>  gemini://localhost:1965  - ***
+19:57:35.552 [main] INFO  io.github.wallawood.access - *** -  Wallawood  >>  https://localhost:8443  [HTTP/DELEGATE]  - ***
+19:57:47.484 [wallawood-worker-1] INFO  c.example.jewels.auth.HttpAuthGuard - HttpAuthGuard: req=reactor.netty.http.server.HttpServerOperations path=[]
+19:57:47.484 [wallawood-worker-1] INFO  io.github.wallawood.access - HTTP / 20/200 18ms
+19:57:49.583 [wallawood-worker-1] INFO  c.example.jewels.auth.HttpAuthGuard - HttpAuthGuard: req=reactor.netty.http.server.HttpServerOperations path=[signup]
+19:57:49.590 [wallawood-worker-1] INFO  io.github.wallawood.access - HTTP /signup 60/401 7ms
+20:05:38.969 [wallawood-worker-2] INFO  c.example.jewels.auth.HttpAuthGuard - HttpAuthGuard: req=reactor.netty.http.server.HttpServerOperations path=[]
+20:05:38.971 [wallawood-worker-2] INFO  io.github.wallawood.access - HTTP / 20/200 2ms
+20:05:42.123 [wallawood-worker-2] INFO  c.example.jewels.auth.HttpAuthGuard - HttpAuthGuard: req=reactor.netty.http.server.HttpServerOperations path=[signup]
+20:05:42.123 [wallawood-worker-2] INFO  io.github.wallawood.access - HTTP /signup 60/401 4ms
+
+> Task :run FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':run'.
+> Process 'command 'C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot\bin\java.exe'' finished with non-zero exit value -1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 8m 54s
+3 actionable tasks: 2 executed, 1 up-to-date

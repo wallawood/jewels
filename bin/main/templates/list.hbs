@@ -1,0 +1,26 @@
+# 💎 Jewels
+
+Logged in as: {{{user.displayName}}}{{#if user.isMod}} (mod){{/if}}
+
+=> /jewels/new Post a new jewel
+=> /jewels/search Search
+=> /mod-guide Moderator guide
+{{#if query}}
+
+Search results for "{{{query}}}":
+{{/if}}
+
+{{#each jewels}}
+💎 {{{authorName}}}: {{{body}}}
+{{#if canEdit}}
+=> /jewels/{{id}}/edit ✏️ Edit
+{{/if}}{{#if canDelete}}
+=> /jewels/{{id}}/delete 🗑️ Delete
+{{/if}}
+
+{{/each}}
+{{^jewels}}
+No jewels yet. Be the first.
+{{/jewels}}
+
+=> / ← Home

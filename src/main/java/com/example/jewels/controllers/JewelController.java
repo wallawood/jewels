@@ -6,7 +6,6 @@ import com.example.jewels.repository.JewelRepository;
 import com.example.jewels.repository.dto.User;
 import com.example.jewels.errors.NotFoundException;
 import io.github.wallawood.GeminiResponse;
-import io.github.wallawood.annotations.RequireCertificate;
 import io.github.wallawood.annotations.RequireClearance;
 import com.example.jewels.auth.Role;
 import io.github.wallawood.annotations.Context;
@@ -20,7 +19,6 @@ import java.io.IOException;
 
 @GeminiController
 @Path("/jewels")
-@RequireCertificate("A client certificate is required to browse jewels.")
 @RequireClearance(level = Role.USER, message = "Sign up at /signup to browse jewels.")
 public class JewelController {
 

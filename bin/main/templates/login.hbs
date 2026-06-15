@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log In — Jewels</title>
+<style>{{{css}}}</style>
+</head>
+<body>
+<main>
+<h1>Log In</h1>
+{{#if error}}<p><strong>{{error}}</strong></p>{{/if}}
+<form method="post" action="/login">
+  <label>Display name<input type="text" name="display_name" required autofocus></label>
+  <label>Password<input type="password" name="password" required></label>
+  <button type="submit">Log in</button>
+</form>
+<p><a href="/http-signup">Create an account</a></p>
+</main>
+</body>
+</html>

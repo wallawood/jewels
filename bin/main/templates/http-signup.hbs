@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign Up — Jewels</title>
+<style>{{{css}}}</style>
+</head>
+<body>
+<main>
+<h1>Create Account</h1>
+{{#if error}}<p><strong>{{error}}</strong></p>{{/if}}
+<form method="post" action="/http-signup">
+  <label>Display name<input type="text" name="display_name" required autofocus></label>
+  <label>Password<input type="password" name="password" required></label>
+  <label>Confirm password<input type="password" name="confirm_password" required></label>
+  <button type="submit">Sign up</button>
+</form>
+<p><a href="/login">Already have an account? Log in</a></p>
+</main>
+</body>
+</html>

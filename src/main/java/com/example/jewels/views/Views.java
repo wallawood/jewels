@@ -6,11 +6,24 @@ import com.github.jknack.handlebars.Handlebars;
 import io.github.wallawood.annotations.Component;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Component
 public class Views {
+
+    private static final String PICO_CSS = loadPicoCss();
+
+    private static String loadPicoCss() {
+        try (InputStream in = Views.class.getResourceAsStream("/pico.classless.min.css")) {
+            return in != null ? new String(in.readAllBytes(), StandardCharsets.UTF_8) : "";
+        } catch (IOException e) {
+            return "";
+        }
+    }
 
     private final Handlebars hbs = new Handlebars();
 
@@ -31,6 +44,20 @@ public class Views {
 
     public String signupExists(String displayName) throws IOException {
         return hbs.compile("templates/signup-exists").apply(Map.of("displayName", displayName));
+    }
+
+    public String login(String error) throws IOException {
+        Map<String, Object> ctx = new HashMap<>();
+        ctx.put("css", PICO_CSS);
+        ctx.put("error", error != null ? error : "");
+        return hbs.compile("templates/login").apply(ctx);
+    }
+
+    public String httpSignup(String error) throws IOException {
+        Map<String, Object> ctx = new HashMap<>();
+        ctx.put("css", PICO_CSS);
+        ctx.put("error", error != null ? error : "");
+        return hbs.compile("templates/http-signup").apply(ctx);
     }
 
     public String leaveCancelled(String input) throws IOException {
