@@ -11,22 +11,24 @@ import io.github.wallawood.annotations.Preprocessor;
 import java.security.cert.X509Certificate;
 import java.util.Optional;
 
-@Preprocessor(priority = 0)
-public class Authority implements RequestInterceptor {
+@Preprocessor(priority = 1)
+public class CertAuthority implements RequestInterceptor {
 
     private final AuthService authService;
 
-    public Authority(AuthService authService) {
+    public CertAuthority(AuthService authService) {
         this.authService = authService;
     }
 
     @Override
     public Optional<GeminiResponse> intercept(RequestContext context) {
         X509Certificate cert = context.get(X509Certificate.class);
-        if (cert == null) return Optional.empty();
+        if (cert == null)
+            return Optional.empty();
 
         User user = authService.authenticate(cert);
-        if (user == null) return Optional.empty();
+        if (user == null)
+            return Optional.empty();
 
         context.add(user);
         context.add(Grant.clearance(user.level()));

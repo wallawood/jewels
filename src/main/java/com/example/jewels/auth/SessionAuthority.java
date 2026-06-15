@@ -13,7 +13,7 @@ import reactor.netty.http.server.HttpServerRequest;
 
 import java.util.Optional;
 
-@Preprocessor(priority = -1)
+@Preprocessor(priority = 0)
 public class SessionAuthority implements RequestInterceptor {
 
     private final SessionRepository sessions;
@@ -27,19 +27,24 @@ public class SessionAuthority implements RequestInterceptor {
     @Override
     public Optional<GeminiResponse> intercept(RequestContext context) {
         HttpServerRequest req = context.get(HttpServerRequest.class);
-        if (req == null) return Optional.empty();
+        if (req == null)
+            return Optional.empty();
 
         String cookieHeader = req.requestHeaders().get("Cookie");
-        if (cookieHeader == null) return Optional.empty();
+        if (cookieHeader == null)
+            return Optional.empty();
 
         String token = extractSessionToken(cookieHeader);
-        if (token == null) return Optional.empty();
+        if (token == null)
+            return Optional.empty();
 
         Session session = sessions.findByToken(token);
-        if (session == null || session.isExpired()) return Optional.empty();
+        if (session == null || session.isExpired())
+            return Optional.empty();
 
         User user = users.findById(session.userId());
-        if (user == null) return Optional.empty();
+        if (user == null)
+            return Optional.empty();
 
         context.add(user);
         context.add(Grant.clearance(user.level()));
