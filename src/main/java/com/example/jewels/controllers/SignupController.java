@@ -33,7 +33,7 @@ public class SignupController {
         if (authService.isRegistered(cert)) {
             return GeminiResponse.success(views.signupExists(CertUtil.name(cert)));
         }
-        return GeminiResponse.success(views.signupChoose());
+        return GeminiResponse.temporaryRedirect("/signup-choose");
     }
 
     @Path("/user")

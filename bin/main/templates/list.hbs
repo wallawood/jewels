@@ -11,16 +11,21 @@ Search results for "{{{query}}}":
 {{/if}}
 
 {{#each jewels}}
-💎 {{{authorName}}}: {{{body}}}
-{{#if canEdit}}
-=> /jewels/{{id}}/edit ✏️ Edit
-{{/if}}{{#if canDelete}}
-=> /jewels/{{id}}/delete 🗑️ Delete
+{{#if @first}}
+---
 {{/if}}
-
+=> /jewels/{{id}} 💎 {{{body}}}
+---
 {{/each}}
 {{^jewels}}
 No jewels yet. Be the first.
 {{/jewels}}
 
 => / ← Home
+{{#if isHttp}}
+{{#if isLoggedIn}}
+=> /logout Log out
+{{else}}
+=> /login Log in
+{{/if}}
+{{/if}}

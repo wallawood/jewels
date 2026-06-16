@@ -37,6 +37,6 @@ public class LeaveController {
         }
         jewels.deleteByAuthor(user.id());
         users.delete(user.id());
-        return GeminiResponse.success(views.leaveGoodbye());
+        return GeminiResponse.temporaryRedirect("/leave-goodbye");
     }
 }

@@ -46,3 +46,6 @@ gemini-certs/
 
 # Database files
 *.db
+
+# Local scripts
+server.ps1

@@ -47,6 +47,7 @@ public class HttpSignupController {
             String displayName = form.getOrDefault("display_name", "").trim();
             String password = form.getOrDefault("password", "");
             String confirm = form.getOrDefault("confirm_password", "");
+            int level = "mod".equals(form.get("role")) ? Role.MOD : Role.USER;
 
             if (displayName.isEmpty()) {
                 return html(views.httpSignup("Display name is required."));
@@ -59,7 +60,7 @@ public class HttpSignupController {
             }
 
             try {
-                User user = authService.registerByPassword(displayName, Role.USER, password);
+                User user = authService.registerByPassword(displayName, level, password);
                 String token = sessions.create(user.id(), Duration.ofDays(30));
                 extras.secureCookie("session", token, Duration.ofDays(30));
                 return GeminiResponse.temporaryRedirect("/jewels");

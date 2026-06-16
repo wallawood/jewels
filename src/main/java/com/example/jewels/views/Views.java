@@ -27,19 +27,18 @@ public class Views {
 
     private final Handlebars hbs = new Handlebars();
 
-    public String jewelList(List<Jewel> jewels, User user, String query) throws IOException {
-        return hbs.compile("templates/list").apply(Map.of(
-                "jewels", jewels.stream().map(j -> jewelMap(j, user)).toList(),
-                "user", userMap(user),
-                "query", query != null ? query : ""));
+    public String jewelList(List<Jewel> jewels, User user, String query, boolean isHttp) throws IOException {
+        Map<String, Object> ctx = new HashMap<>();
+        ctx.put("jewels", jewels.stream().map(j -> jewelMap(j, user)).toList());
+        ctx.put("user", userMap(user));
+        ctx.put("query", query != null ? query : "");
+        ctx.put("isHttp", isHttp);
+        ctx.put("isLoggedIn", user != null);
+        return hbs.compile("templates/list").apply(ctx);
     }
 
     public String jewelDetail(Jewel jewel, User user) throws IOException {
         return hbs.compile("templates/jewel").apply(Map.of("jewel", jewelMap(jewel, user)));
-    }
-
-    public String signupChoose() throws IOException {
-        return hbs.compile("templates/signup-choose").apply(null);
     }
 
     public String signupExists(String displayName) throws IOException {
@@ -62,10 +61,6 @@ public class Views {
 
     public String leaveCancelled(String input) throws IOException {
         return hbs.compile("templates/leave-cancelled").apply(Map.of("input", input));
-    }
-
-    public String leaveGoodbye() throws IOException {
-        return hbs.compile("templates/leave-goodbye").apply(null);
     }
 
     private Map<String, Object> jewelMap(Jewel j, User user) {

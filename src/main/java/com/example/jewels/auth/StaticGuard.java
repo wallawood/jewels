@@ -20,6 +20,9 @@ public class StaticGuard implements RequestInterceptor {
         URI uri = context.get(URI.class);
         if (uri != null && uri.getPath().startsWith("/mod-guide")) {
             Grant grant = context.get(Grant.class);
+            if (grant == null) {
+                return Optional.of(GeminiResponse.clientCertificateRequired("Moderators only."));
+            }
             if (!MOD_REQUIRED.check(grant)) {
                 return Optional.of(GeminiResponse.certificateNotAuthorized("Moderators only."));
             }

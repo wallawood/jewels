@@ -9,3 +9,4 @@ A place for shower thoughts.
 => /jewels/search Search jewels
 => /jewels/best Best jewels
 => /leave Leave Jewels
+=> gemini://gemi.dev/cgi-bin/wp.cgi/ Use Gemipedia for Ideas

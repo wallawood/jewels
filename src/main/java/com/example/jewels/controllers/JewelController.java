@@ -14,6 +14,7 @@ import io.github.wallawood.annotations.Path;
 import io.github.wallawood.annotations.PathParam;
 import io.github.wallawood.annotations.QueryString;
 import io.github.wallawood.annotations.RequireInput;
+import reactor.netty.http.server.HttpServerRequest;
 
 import java.io.IOException;
 
@@ -31,8 +32,8 @@ public class JewelController {
     }
 
     @Path("")
-    public GeminiResponse list(@Context User user) throws IOException {
-        return GeminiResponse.success(views.jewelList(jewels.findAll(), user, null));
+    public GeminiResponse list(@Context User user, @Context HttpServerRequest req) throws IOException {
+        return GeminiResponse.success(views.jewelList(jewels.findAll(), user, null, req != null));
     }
 
     @Path("/new")
@@ -74,8 +75,8 @@ public class JewelController {
 
     @Path("/search")
     @RequireInput("Search jewels:")
-    public GeminiResponse search(@Context User user, @QueryString String query) throws IOException {
-        return GeminiResponse.success(views.jewelList(jewels.search(query.trim()), user, query.trim()));
+    public GeminiResponse search(@Context User user, @QueryString String query, @Context HttpServerRequest req) throws IOException {
+        return GeminiResponse.success(views.jewelList(jewels.search(query.trim()), user, query.trim(), req != null));
     }
 
     @Path("/best")
